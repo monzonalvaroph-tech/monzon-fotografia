@@ -1,19 +1,21 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
   <meta charset="UTF-8">
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description"
-        content="Monzón Álvaro — Fotografía y Video. Eventos, retratos, 15 años y sesiones en Entre Ríos.">
+  <meta
+    name="description"
+    content="Monzón Álvaro — Fotografía & Video. Eventos, retratos, 15 años y sesiones en Entre Ríos."
+  >
 
   <meta name="theme-color" content="#080909">
 
   <title>Monzón Álvaro | Fotografía & Video</title>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -22,453 +24,496 @@
     rel="stylesheet"
   >
 
-  <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
+
 </head>
+
 
 <body>
 
-  <!-- =========================
-       HEADER
-  ========================== -->
 
-  <header class="site-header">
+<header class="site-header">
 
-    <a href="#inicio" class="brand">
-      MA
+  <a href="#inicio" class="brand">
+    MA
+  </a>
+
+  <nav class="nav" id="nav">
+
+    <a href="#portfolio">Portfolio</a>
+
+    <a href="#servicios">Servicios</a>
+
+    <a href="#galerias">Galerías</a>
+
+    <a href="#sobre-mi">Sobre mí</a>
+
+    <a href="#contacto">Contacto</a>
+
+    <a href="#galerias" class="nav-gallery">
+      Mi galería
     </a>
 
-    <nav class="nav" id="nav">
+  </nav>
 
-      <a href="#portfolio">Portfolio</a>
+  <button
+    class="menu"
+    id="menu"
+    aria-label="Abrir menú"
+    aria-expanded="false"
+  >
+    ☰
+  </button>
 
-      <a href="#servicios">Servicios</a>
+</header>
 
-      <a href="#galerias">Galerías</a>
 
-      <a href="#sobre-mi">Sobre mí</a>
+<main>
 
-      <a href="#contacto">Contacto</a>
 
-      <a href="#galerias" class="nav-gallery">
-        Mi galería
+<!-- =========================
+     HERO
+========================= -->
+
+<section id="inicio" class="hero">
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+
+    <p class="eyebrow">
+      FOTOGRAFÍA & VIDEO
+    </p>
+
+    <h1>
+      MONZÓN ÁLVARO
+    </h1>
+
+    <p class="tagline">
+      Historias que merecen ser recordadas.
+    </p>
+
+    <div class="actions">
+
+      <a href="#portfolio" class="btn light">
+        Ver portfolio
       </a>
 
-    </nav>
+      <a href="#contacto" class="btn outline">
+        Consultar
+      </a>
 
-    <button
-      class="menu"
-      id="menu"
-      aria-label="Abrir menú"
-      aria-expanded="false"
-    >
-      ☰
-    </button>
+    </div>
 
-  </header>
+  </div>
+
+</section>
 
 
-  <main>
 
-    <!-- =========================
-         HERO
-    ========================== -->
+<!-- =========================
+     PORTFOLIO
+========================= -->
 
-    <section id="inicio" class="hero">
+<section id="portfolio" class="section portfolio">
 
-      <div class="hero-overlay"></div>
+  <div class="section-head">
 
-      <div class="hero-content">
+    <div>
 
-        <p class="eyebrow">
-          FOTOGRAFÍA & VIDEO
-        </p>
-
-        <h1>
-          MONZÓN ÁLVARO
-        </h1>
-
-        <p class="tagline">
-          Historias que merecen ser recordadas.
-        </p>
-
-        <div class="actions">
-
-          <a href="#portfolio" class="btn light">
-            Ver portfolio
-          </a>
-
-          <a href="#contacto" class="btn outline">
-            Consultar
-          </a>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- =========================
-         PORTFOLIO
-    ========================== -->
-
-    <section id="portfolio" class="section portfolio">
-
-      <div class="section-head">
-
-        <div>
-
-          <p class="eyebrow">
-            MI TRABAJO
-          </p>
-
-          <h2>
-            Portfolio
-          </h2>
-
-        </div>
-
-        <a href="#contacto" class="text-link">
-          Consultar disponibilidad →
-        </a>
-
-      </div>
-
-
-      <div class="portfolio-grid">
-
-        <article class="portfolio-card tall">
-
-          <div class="portfolio-placeholder">
-            <span>Eventos</span>
-          </div>
-
-          <span>Eventos</span>
-
-        </article>
-
-
-        <article class="portfolio-card">
-
-          <div class="portfolio-placeholder">
-            <span>Retratos</span>
-          </div>
-
-          <span>Retratos</span>
-
-        </article>
-
-
-        <article class="portfolio-card">
-
-          <div class="portfolio-placeholder">
-            <span>15 años</span>
-          </div>
-
-          <span>15 años</span>
-
-        </article>
-
-
-        <article class="portfolio-card">
-
-          <div class="portfolio-placeholder">
-            <span>Sesiones</span>
-          </div>
-
-          <span>Sesiones</span>
-
-        </article>
-
-
-        <article class="portfolio-card">
-
-          <div class="portfolio-placeholder">
-            <span>Naturaleza</span>
-          </div>
-
-          <span>Naturaleza</span>
-
-        </article>
-
-      </div>
-
-      <p class="note">
-        Próximamente: galería completa de trabajos.
+      <p class="eyebrow">
+        MI TRABAJO
       </p>
 
-    </section>
+      <h2>
+        Portfolio
+      </h2>
+
+    </div>
+
+    <a href="#contacto" class="text-link">
+      Consultar disponibilidad →
+    </a>
+
+  </div>
 
 
-    <!-- =========================
-         SERVICIOS
-    ========================== -->
+  <div class="portfolio-grid">
 
-    <section id="servicios" class="section services">
 
-      <div class="section-head">
+    <!-- QUINCE -->
 
-        <div>
+    <article class="portfolio-card tall">
 
-          <p class="eyebrow">
-            SERVICIOS
-          </p>
+      <img
+        src="quince.jpg.JPG"
+        alt="Fotografía de 15 años"
+      >
 
-          <h2>
-            Fotografía para momentos importantes
-          </h2>
-
-        </div>
-
+      <div class="photo-label">
+        15 años
       </div>
 
-
-      <div class="service-grid">
-
-        <article class="service">
-
-          <div class="icon">
-            ◉
-          </div>
-
-          <h3>
-            Eventos
-          </h3>
-
-          <p>
-            Cobertura fotográfica de cumpleaños,
-            celebraciones y eventos especiales.
-          </p>
-
-        </article>
+    </article>
 
 
-        <article class="service">
 
-          <div class="icon">
-            ◎
-          </div>
+    <!-- EVENTO -->
 
-          <h3>
-            15 años
-          </h3>
+    <article class="portfolio-card">
 
-          <p>
-            Fotografía para acompañar cada momento
-            de una celebración inolvidable.
-          </p>
+      <img
+        src="evento.jpg.jpg"
+        alt="Fotografía de evento"
+      >
 
-        </article>
-
-
-        <article class="service">
-
-          <div class="icon">
-            ◌
-          </div>
-
-          <h3>
-            Retratos
-          </h3>
-
-          <p>
-            Sesiones individuales, familiares,
-            parejas y retratos personales.
-          </p>
-
-        </article>
-
-
-        <article class="service">
-
-          <div class="icon">
-            ✦
-          </div>
-
-          <h3>
-            Sesiones
-          </h3>
-
-          <p>
-            Sesiones exteriores y propuestas
-            personalizadas según cada idea.
-          </p>
-
-        </article>
-
+      <div class="photo-label">
+        Eventos
       </div>
 
-    </section>
+    </article>
 
 
-    <!-- =========================
-         GALERÍAS DE CLIENTES
-    ========================== -->
 
-    <section id="galerias" class="gallery-cta">
+    <!-- CUMPLEAÑOS -->
 
-      <div class="camera-art">
+    <article class="portfolio-card">
 
-        <div class="camera">
+      <img
+        src="cumpleanos.jpg.JPG"
+        alt="Fotografía de cumpleaños"
+      >
 
-          <div class="lens"></div>
-
-          <span>
-            MONZÓN
-          </span>
-
-        </div>
-
+      <div class="photo-label">
+        Cumpleaños
       </div>
 
+    </article>
 
-      <div>
 
-        <p class="eyebrow">
-          CLIENTES
-        </p>
 
-        <h2>
-          Tu galería, siempre disponible.
-        </h2>
+    <!-- RETRATO -->
 
-        <p>
-          Próximamente podrás ingresar a una galería
-          privada para ver y descargar las fotografías
-          y videos de tu evento.
-        </p>
+    <article class="portfolio-card">
 
-        <br>
+      <img
+        src="retrato.jpg.jpg"
+        alt="Retrato fotográfico"
+      >
 
-        <a href="#contacto" class="btn light">
-          Consultar mi galería
-        </a>
-
+      <div class="photo-label">
+        Retratos
       </div>
 
-    </section>
+    </article>
 
 
-    <!-- =========================
-         SOBRE MÍ
-    ========================== -->
 
-    <section id="sobre-mi" class="section about">
+    <!-- NATURALEZA -->
 
-      <div class="about-photo">
+    <article class="portfolio-card">
 
-        <div class="about-placeholder">
-          FOTOGRAFÍA
-        </div>
+      <img
+        src="san-jaime.jpg.jpg"
+        alt="Paisaje de San Jaime de la Frontera"
+      >
 
+      <div class="photo-label">
+        Naturaleza
       </div>
 
+    </article>
 
-      <div class="about-copy">
 
-        <p class="eyebrow">
-          SOBRE MÍ
-        </p>
+  </div>
 
-        <h2>
-          Álvaro Monzón
-        </h2>
+</section>
 
-        <p>
-          Soy fotógrafo de Entre Ríos y disfruto
-          especialmente de los retratos, los eventos
-          y las historias que aparecen en momentos
-          cotidianos.
-        </p>
 
-        <p>
-          Mi objetivo es crear fotografías naturales,
-          cuidadas y pensadas para que puedas volver
-          a esos momentos con el paso del tiempo.
-        </p>
 
+<!-- =========================
+     SERVICIOS
+========================= -->
+
+<section id="servicios" class="section services">
+
+  <div class="section-head">
+
+    <div>
+
+      <p class="eyebrow">
+        SERVICIOS
+      </p>
+
+      <h2>
+        Fotografía para momentos importantes
+      </h2>
+
+    </div>
+
+  </div>
+
+
+  <div class="service-grid">
+
+
+    <article class="service">
+
+      <div class="icon">
+        ◉
       </div>
 
-    </section>
+      <h3>
+        Eventos
+      </h3>
+
+      <p>
+        Cobertura fotográfica de cumpleaños,
+        celebraciones y eventos especiales.
+      </p>
+
+    </article>
 
 
-    <!-- =========================
-         CONTACTO
-    ========================== -->
 
-    <section id="contacto" class="contact">
+    <article class="service">
 
-      <div>
-
-        <p class="eyebrow">
-          CONTACTO
-        </p>
-
-        <h2>
-          ¿Tenés un proyecto en mente?
-        </h2>
-
-        <p>
-          Contame qué estás buscando y hablamos
-          sobre tu sesión o evento.
-        </p>
-
+      <div class="icon">
+        ◎
       </div>
 
+      <h3>
+        15 años
+      </h3>
 
-      <div class="contact-links">
+      <p>
+        Fotografía para acompañar cada momento
+        de una celebración inolvidable.
+      </p>
 
-        <a href="mailto:monzonalvaroph@gmail.com">
-          Email
-          <small>
-            monzonalvaroph@gmail.com
-          </small>
-        </a>
+    </article>
 
-        <a
-          href="https://www.instagram.com/"
-          target="_blank"
-          rel="noopener"
-        >
-          Instagram
-          <small>
-            @monzonalvaroph
-          </small>
-        </a>
 
+
+    <article class="service">
+
+      <div class="icon">
+        ◌
       </div>
 
+      <h3>
+        Retratos
+      </h3>
 
-      <a href="mailto:monzonalvaroph@gmail.com" class="btn light">
-        Escribirme
-      </a>
+      <p>
+        Sesiones individuales, familiares,
+        parejas y retratos personales.
+      </p>
 
-    </section>
-
-  </main>
-
-
-  <!-- =========================
-       FOOTER
-  ========================== -->
-
-  <footer>
-
-    <span>
-      © 2026 Monzón Álvaro — Fotografía & Video
-    </span>
-
-    <span>
-      Entre Ríos, Argentina
-    </span>
-
-  </footer>
+    </article>
 
 
-  <!-- JAVASCRIPT -->
-  <script src="js/script.js"></script>
+
+    <article class="service">
+
+      <div class="icon">
+        ✦
+      </div>
+
+      <h3>
+        Sesiones
+      </h3>
+
+      <p>
+        Sesiones exteriores y propuestas
+        personalizadas.
+      </p>
+
+    </article>
+
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     GALERÍAS
+========================= -->
+
+<section id="galerias" class="gallery-cta">
+
+  <div class="camera-art">
+
+    <div class="camera">
+
+      <div class="lens"></div>
+
+      <span>
+        MONZÓN
+      </span>
+
+    </div>
+
+  </div>
+
+
+  <div>
+
+    <p class="eyebrow">
+      CLIENTES
+    </p>
+
+    <h2>
+      Tu galería, siempre disponible.
+    </h2>
+
+    <p>
+      Próximamente podrás ingresar a una galería
+      privada para ver y descargar las fotografías
+      y videos de tu evento.
+    </p>
+
+    <a href="#contacto" class="btn light">
+      Consultar mi galería
+    </a>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     SOBRE MÍ
+========================= -->
+
+<section id="sobre-mi" class="section about">
+
+  <div class="about-photo">
+
+    <img
+      src="retrato-2.jpg.JPG"
+      alt="Álvaro Monzón — Fotografía"
+    >
+
+  </div>
+
+
+  <div class="about-copy">
+
+    <p class="eyebrow">
+      SOBRE MÍ
+    </p>
+
+    <h2>
+      Álvaro Monzón
+    </h2>
+
+    <p>
+      Soy fotógrafo de Entre Ríos y disfruto
+      especialmente de los retratos, los eventos
+      y las historias que aparecen en momentos
+      cotidianos.
+    </p>
+
+    <p>
+      Mi objetivo es crear fotografías naturales,
+      cuidadas y pensadas para que puedas volver
+      a esos momentos con el paso del tiempo.
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     CONTACTO
+========================= -->
+
+<section id="contacto" class="contact">
+
+  <div>
+
+    <p class="eyebrow">
+      CONTACTO
+    </p>
+
+    <h2>
+      ¿Tenés un proyecto en mente?
+    </h2>
+
+    <p>
+      Contame qué estás buscando y hablamos
+      sobre tu sesión o evento.
+    </p>
+
+  </div>
+
+
+  <div class="contact-links">
+
+    <a href="mailto:monzonalvaroph@gmail.com">
+
+      Email
+
+      <small>
+        monzonalvaroph@gmail.com
+      </small>
+
+    </a>
+
+
+    <a
+      href="https://www.instagram.com/monzonalvaroph/"
+      target="_blank"
+      rel="noopener"
+    >
+
+      Instagram
+
+      <small>
+        @monzonalvaroph
+      </small>
+
+    </a>
+
+  </div>
+
+
+  <a
+    href="mailto:monzonalvaroph@gmail.com"
+    class="btn light"
+  >
+    Escribirme
+  </a>
+
+</section>
+
+
+</main>
+
+
+
+<footer>
+
+  <span>
+    © 2026 Monzón Álvaro — Fotografía & Video
+  </span>
+
+  <span>
+    Entre Ríos, Argentina
+  </span>
+
+</footer>
+
+
+
+<script src="js/script.js"></script>
 
 </body>
+
 </html>
-```
