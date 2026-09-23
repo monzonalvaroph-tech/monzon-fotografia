@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://monzonalvaro.com.ar/sitemap.xml
