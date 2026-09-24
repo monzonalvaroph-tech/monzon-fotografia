@@ -920,8 +920,8 @@ footer {
 
     margin-left: auto;
     margin-right: auto;
-  }
-.portfolio-card img.retrato-vertical {
-  object-fit: contain;
-  background: #111;
+  .portfolio-card img.retrato-vertical{
+  object-fit: cover;
+  object-position: center center;
+  transform: scale(0.92);
 }
