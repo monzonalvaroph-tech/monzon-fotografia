@@ -1177,3 +1177,73 @@ footer {
   }
 
 }
+/* LIGHTBOX - 15 AÑOS */
+
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.92);
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.lightbox.show {
+  display: flex;
+}
+
+.lightbox-content {
+  width: 100%;
+  max-width: 1000px;
+  max-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-content img {
+  display: block;
+  max-width: 100%;
+  max-height: 85vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 20px;
+  right: 25px;
+  z-index: 10000;
+  border: none;
+  background: none;
+  color: white;
+  font-size: 42px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+  .lightbox {
+    padding: 15px;
+  }
+
+  .lightbox-content {
+    max-width: 100%;
+  }
+
+  .lightbox-content img {
+    max-width: 100%;
+    max-height: 80vh;
+  }
+
+  .lightbox-close {
+    top: 10px;
+    right: 15px;
+    font-size: 36px;
+  }
+}
