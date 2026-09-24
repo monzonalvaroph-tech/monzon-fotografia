@@ -920,6 +920,8 @@ footer {
 
     margin-left: auto;
     margin-right: auto;
+      }
+}
 /* Ajuste de retratos verticales */
 .portfolio-card img.retrato-vertical {
   object-fit: cover;
