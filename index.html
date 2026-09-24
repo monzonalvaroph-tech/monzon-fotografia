@@ -594,6 +594,27 @@
 
 
 <script src="js/script.js"></script>
+<!-- GALERÍA 15 AÑOS -->
+
+<div id="lightbox-quince" class="lightbox">
+  <button class="lightbox-close" onclick="closeQuince()">×</button>
+
+  <div class="lightbox-content">
+    <img src="quince.webp" alt="Fotografía de 15 años">
+  </div>
+</div>
+
+<script>
+  function openGallery(category) {
+    if (category === 'quince') {
+      document.getElementById('lightbox-quince').classList.add('show');
+    }
+  }
+
+  function closeQuince() {
+    document.getElementById('lightbox-quince').classList.remove('show');
+  }
+</script>
 </body>
 
 </html>
