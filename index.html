@@ -647,45 +647,6 @@
 
 
 <script src="js/script.js"></script>
-<script>
-  function openGallery(category) {
-
-    const galleries = document.querySelectorAll('.gallery-section');
-
-    galleries.forEach(function(gallery) {
-      gallery.classList.remove('active');
-    });
-
-    const selectedGallery = document.getElementById('gallery-' + category);
-
-    if (selectedGallery) {
-      selectedGallery.classList.add('active');
-
-      selectedGallery.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  }
-
-  function closeGallery() {
-
-    const galleries = document.querySelectorAll('.gallery-section');
-
-    galleries.forEach(function(gallery) {
-      gallery.classList.remove('active');
-    });
-
-    const portfolio = document.getElementById('portfolio');
-
-    if (portfolio) {
-      portfolio.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
-      });
-    }
-  }
-</script>
 </body>
 
 </html>
