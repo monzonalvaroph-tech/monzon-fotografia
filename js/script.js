@@ -118,26 +118,3 @@ if (footerYear) {
 
 }
 ```
-// =========================
-// GALERÍA 15 AÑOS
-// =========================
-
-function openGallery() {
-  const gallery = document.getElementById("gallery-quince");
-
-  if (!gallery) return;
-
-  gallery.classList.add("active");
-  gallery.setAttribute("aria-hidden", "false");
-  document.body.style.overflow = "hidden";
-}
-
-function closeGallery() {
-  const gallery = document.getElementById("gallery-quince");
-
-  if (!gallery) return;
-
-  gallery.classList.remove("active");
-  gallery.setAttribute("aria-hidden", "true");
-  document.body.style.overflow = "";
-}
