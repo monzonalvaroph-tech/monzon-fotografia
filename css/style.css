@@ -920,12 +920,17 @@ footer {
 
     margin-left: auto;
     margin-right: auto;
-  .portfolio-card img.portfolio-card img.retrato-vertical {
-  object-fit: cover;
-  object-position: center 35%;
-  transform: none;
-}
+/* Ajuste de retratos verticales */
+.portfolio-card img.retrato-vertical {
   object-fit: cover;
   object-position: center center;
-  transform: scale(0.92);
+}
+
+/* En celulares, mostrar un poco más de la fotografía */
+@media (max-width: 480px) {
+  .portfolio-card img.retrato-vertical {
+    object-fit: cover;
+    object-position: center center;
+    transform: scale(0.94);
+  }
 }
