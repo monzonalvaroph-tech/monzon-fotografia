@@ -923,3 +923,7 @@ footer {
   }
 
 }
+/* Ajuste específico para retratos verticales */
+.portfolio-card img.retrato-vertical {
+  object-position: center center;
+}
