@@ -1,3 +1,13 @@
+/* =========================================================
+   ALVARO MONZÓN — FOTOGRAFÍA & VIDEO
+   CSS PRINCIPAL
+========================================================= */
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
 :root {
   --bg: #090a0a;
   --panel: #101111;
@@ -6,8 +16,13 @@
   --line: #282927;
   --accent: #d8d2c5;
   --max: 1240px;
-  --ease: cubic-bezier(.2,.7,.2,1);
+  --ease: cubic-bezier(.2, .7, .2, 1);
 }
+
+
+/* =========================================================
+   RESET
+========================================================= */
 
 * {
   box-sizing: border-box;
@@ -23,6 +38,11 @@ body {
   color: var(--text);
   font-family: Inter, system-ui, sans-serif;
   line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
 }
 
 a {
@@ -31,12 +51,13 @@ a {
 }
 
 
-/* =========================
+/* =========================================================
    HEADER
-========================= */
+========================================================= */
 
 .site-header {
   height: 68px;
+
   background: rgba(8, 9, 9, .96);
   border-bottom: 1px solid var(--line);
 
@@ -99,9 +120,9 @@ a {
 }
 
 
-/* =========================
+/* =========================================================
    HERO
-========================= */
+========================================================= */
 
 .hero {
   min-height: 780px;
@@ -133,9 +154,9 @@ a {
   background:
     linear-gradient(
       90deg,
-      rgba(0,0,0,.7),
-      rgba(0,0,0,.15),
-      rgba(0,0,0,.65)
+      rgba(0, 0, 0, .7),
+      rgba(0, 0, 0, .15),
+      rgba(0, 0, 0, .65)
     ),
     url("../img/hero.svg") center / cover no-repeat;
 
@@ -149,7 +170,7 @@ a {
   background:
     linear-gradient(
       0deg,
-      rgba(0,0,0,.45),
+      rgba(0, 0, 0, .45),
       transparent 60%
     );
 }
@@ -157,6 +178,9 @@ a {
 .hero-content {
   position: relative;
   z-index: 1;
+
+  width: 100%;
+  padding: 0 20px;
 
   margin-top: 80px;
 }
@@ -190,6 +214,8 @@ a {
   font-style: italic;
 
   color: #e0ddd5;
+
+  margin: 0;
 }
 
 .actions {
@@ -238,14 +264,15 @@ a {
 }
 
 
-/* =========================
-   SECCIONES
-========================= */
+/* =========================================================
+   SECCIONES GENERALES
+========================================================= */
 
 .section {
+  width: 100%;
   max-width: var(--max);
 
-  margin: auto;
+  margin: 0 auto;
 
   padding: 90px 5%;
 }
@@ -289,9 +316,9 @@ a {
 }
 
 
-/* =========================
+/* =========================================================
    PORTFOLIO
-========================= */
+========================================================= */
 
 .portfolio {
   background: var(--bg);
@@ -315,6 +342,7 @@ a {
 .portfolio-card {
   position: relative;
 
+  min-width: 0;
   overflow: hidden;
 
   background: var(--panel);
@@ -333,6 +361,7 @@ a {
   height: 100%;
 
   object-fit: cover;
+  object-position: center;
 
   display: block;
 
@@ -357,7 +386,7 @@ a {
   background:
     linear-gradient(
       0deg,
-      rgba(0,0,0,.68),
+      rgba(0, 0, 0, .68),
       transparent 55%
     );
 
@@ -385,7 +414,7 @@ a {
   text-transform: uppercase;
 
   text-shadow:
-    0 2px 12px rgba(0,0,0,.8);
+    0 2px 12px rgba(0, 0, 0, .8);
 }
 
 .photo-label::after {
@@ -408,9 +437,17 @@ a {
 }
 
 
-/* =========================
+/* Retrato vertical */
+
+.portfolio-card img.retrato-vertical {
+  object-fit: cover;
+  object-position: center center;
+}
+
+
+/* =========================================================
    SERVICIOS
-========================= */
+========================================================= */
 
 .services {
   border-top: 1px solid var(--line);
@@ -419,7 +456,7 @@ a {
   background:
     linear-gradient(
       180deg,
-      rgba(255,255,255,.015),
+      rgba(255, 255, 255, .015),
       transparent
     );
 }
@@ -441,7 +478,7 @@ a {
 }
 
 .service:hover {
-  background: rgba(255,255,255,.025);
+  background: rgba(255, 255, 255, .025);
 }
 
 .service:first-child {
@@ -485,13 +522,12 @@ a {
 }
 
 
-/* =========================
-   GALERÍA CLIENTES
-========================= */
+/* =========================================================
+   GALERÍAS CLIENTES
+========================================================= */
 
 .gallery-cta {
   width: 100%;
-
   max-width: var(--max);
 
   margin: 0 auto;
@@ -524,67 +560,135 @@ a {
   overflow: hidden;
 }
 
-.camera {
-  width: 230px;
-  height: 145px;
 
-  border: 3px solid #444;
+/* Visual de la galería */
 
-  border-radius: 18px;
+.gallery-visual {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at center,
+      #292a28 0%,
+      #151616 45%,
+      #090a0a 100%
+    );
+}
+
+.gallery-frame {
+  width: 210px;
+  height: 270px;
+
+  padding: 10px;
+
+  background: #d8d2c5;
+
+  box-shadow:
+    0 25px 60px rgba(0, 0, 0, .55);
+
+  transform: rotate(-4deg);
+
+  transition:
+    transform .5s var(--ease),
+    box-shadow .5s ease;
+}
+
+.gallery-frame-inner {
+  width: 100%;
+  height: 100%;
 
   display: grid;
+  place-items: center;
 
-  place-items: end center;
+  border: 1px solid #777;
 
-  padding-bottom: 12px;
-
-  transform: rotate(-3deg);
-
-  box-shadow:
-    0 20px 60px #000;
+  background:
+    linear-gradient(
+      145deg,
+      #343534,
+      #111212
+    );
 }
 
-.lens {
-  position: absolute;
+.gallery-frame-inner span {
+  font-family: Georgia, serif;
 
-  width: 92px;
-  height: 92px;
+  font-size: 42px;
 
-  border: 8px solid #4b4c48;
+  letter-spacing: -5px;
 
-  border-radius: 50%;
-
-  left: 67px;
-  top: 23px;
-
-  box-shadow:
-    inset 0 0 0 14px #171817;
+  color: #d8d2c5;
 }
 
-.camera span {
+.gallery-visual:hover .gallery-frame {
+  transform: rotate(0deg) scale(1.03);
+
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, .65);
+}
+
+.gallery-caption {
+  margin-top: 25px;
+
   font-size: 8px;
 
-  letter-spacing: 2px;
+  letter-spacing: 3px;
 
-  color: #8e8c85;
+  color: #777;
+
+  text-transform: uppercase;
 }
 
-.gallery-cta > div:last-child {
+
+/* Información */
+
+.gallery-info {
   padding: 70px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.gallery-cta p:not(.eyebrow) {
+.gallery-info h2 {
+  margin-bottom: 22px;
+}
+
+.gallery-info p:not(.eyebrow):not(.gallery-note) {
   color: var(--muted);
 
   max-width: 430px;
+
+  margin-top: 0;
+  margin-bottom: 28px;
+}
+
+.gallery-note {
+  margin: 14px 0 0;
+
+  color: #777;
+
+  font-size: 10px;
+
+  letter-spacing: 1.5px;
+
+  text-transform: uppercase;
 }
 
 
-/* =========================
+/* =========================================================
    SOBRE MÍ
-========================= */
+========================================================= */
 
 .about {
   display: grid;
@@ -631,12 +735,14 @@ a {
 }
 
 
-/* =========================
+/* =========================================================
    CONTACTO
-========================= */
+========================================================= */
 
 .contact {
-  padding: 75px 5%;
+  width: 100%;
+
+  padding: 90px 5%;
 
   background:
     linear-gradient(
@@ -651,58 +757,140 @@ a {
   display: grid;
 
   grid-template-columns:
-    1.3fr
-    1fr
-    auto;
+    minmax(0, 1fr)
+    minmax(0, 1fr);
 
   align-items: center;
 
-  gap: 40px;
+  gap: 80px;
 }
 
-.contact h2 {
-  max-width: 560px;
+.contact-intro {
+  min-width: 0;
 }
 
-.contact p:not(.eyebrow) {
+.contact-intro h2 {
+  margin-bottom: 24px;
+}
+
+.contact-intro > p:not(.eyebrow):not(.contact-location) {
+  max-width: 450px;
+
   color: var(--muted);
 
-  font-size: 13px;
+  line-height: 1.8;
+}
+
+.contact-location {
+  margin-top: 28px;
+
+  color: #888;
+
+  font-size: 12px;
+
+  letter-spacing: 1px;
+}
+
+.contact-content {
+  width: 100%;
+  min-width: 0;
 }
 
 .contact-links {
+  display: flex;
+
+  flex-direction: column;
+
+  border-top: 1px solid rgba(255, 255, 255, .12);
+}
+
+.contact-item {
+  position: relative;
+
   display: grid;
 
-  gap: 12px;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+
+  padding: 22px 4px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, .12);
+
+  color: inherit;
+
+  text-decoration: none;
+
+  transition:
+    padding .3s ease,
+    border-color .3s ease;
 }
 
-.contact-links a {
-  font-size: 12px;
+.contact-item span {
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
 
-  border-bottom: 1px solid var(--line);
-
-  padding-bottom: 8px;
+  font-size: 22px;
 }
 
-.contact-links small {
-  display: block;
+.contact-item small {
+  grid-column: 1;
 
-  color: #777;
+  margin-top: 5px;
 
-  font-size: 10px;
+  color: var(--muted);
 
-  margin-top: 2px;
+  font-size: 11px;
+
+  letter-spacing: .5px;
+}
+
+.contact-item strong {
+  grid-column: 2;
+  grid-row: 1 / 3;
+
+  align-self: center;
+
+  font-size: 22px;
+
+  font-weight: 400;
+
+  transition:
+    transform .3s ease;
+}
+
+.contact-item:hover {
+  padding-left: 12px;
+
+  border-color:
+    rgba(255, 255, 255, .3);
+}
+
+.contact-item:hover strong {
+  transform: translateX(6px);
+}
+
+.contact-item.whatsapp span {
+  color: #f1f1ed;
+}
+
+.contact-main-btn {
+  display: inline-flex;
+
+  margin-top: 32px;
 }
 
 
-/* =========================
+/* =========================================================
    FOOTER
-========================= */
+========================================================= */
 
 footer {
+  width: 100%;
   max-width: var(--max);
 
-  margin: auto;
+  margin: 0 auto;
 
   padding: 25px 5%;
 
@@ -720,9 +908,9 @@ footer {
 }
 
 
-/* =========================
+/* =========================================================
    ANIMACIONES
-========================= */
+========================================================= */
 
 .reveal {
   opacity: 0;
@@ -741,11 +929,13 @@ footer {
 }
 
 
-/* =========================
+/* =========================================================
    TABLET / CELULAR
-========================= */
+========================================================= */
 
 @media (max-width: 850px) {
+
+  /* HEADER */
 
   .site-header {
     height: 62px;
@@ -781,6 +971,9 @@ footer {
     display: block;
   }
 
+
+  /* HERO */
+
   .hero {
     margin-top: 62px;
 
@@ -792,6 +985,13 @@ footer {
 
     font-size: 40px;
   }
+
+  .hero-content {
+    padding: 0 25px;
+  }
+
+
+  /* SECCIONES */
 
   .section {
     padding: 65px 5%;
@@ -806,6 +1006,9 @@ footer {
 
     margin-top: 15px;
   }
+
+
+  /* PORTFOLIO */
 
   .portfolio-grid {
     grid-template-columns: 1fr 1fr;
@@ -828,337 +1031,80 @@ footer {
     grid-column: span 2;
   }
 
+
+  /* SERVICIOS */
+
   .service-grid {
     grid-template-columns: 1fr 1fr;
   }
 
   .service {
+    border-right: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
 
     padding: 25px 15px;
+  }
+
+  .service:nth-child(2) {
+    border-right: 0;
+  }
+
+  .service:nth-child(3),
+  .service:nth-child(4) {
+    border-bottom: 0;
   }
 
   .service:first-child {
     padding-left: 15px;
   }
 
-  .gallery-cta,
-  .about {
-    grid-template-columns: 1fr;
-  }
 
-  .gallery-cta > div:last-child {
-    padding: 50px 5%;
+  /* GALERÍAS */
+
+  .gallery-cta {
+    grid-template-columns: 1fr;
+
+    min-height: auto;
   }
 
   .camera-art {
-    min-height: 260px;
+    min-height: 300px;
   }
 
+  .gallery-visual {
+    min-height: 300px;
+  }
+
+  .gallery-info {
+    padding: 55px 5%;
+  }
+
+
+  /* SOBRE MÍ */
+
   .about {
+    grid-template-columns: 1fr;
+
     gap: 30px;
   }
 
   .about-photo {
-    height: 330px;
+    height: 380px;
   }
+
+  .about-copy {
+    max-width: none;
+  }
+
+
+  /* CONTACTO */
 
   .contact {
     grid-template-columns: 1fr;
 
-    gap: 25px;
-
-    padding: 55px 5%;
-  }
-
-  footer {
-    display: block;
-
-    line-height: 2;
-  }
-
-  footer span {
-    display: block;
-  }
-}
-
-
-/* =========================
-   CELULARES PEQUEÑOS
-========================= */
-
-@media (max-width: 480px) {
-
-  .portfolio-grid {
-    grid-template-columns: 1fr;
-
-    grid-template-rows:
-      220px
-      220px
-      220px
-      220px
-      220px;
-  }
-
-  .portfolio-card:nth-child(1),
-  .portfolio-card:nth-child(5) {
-    grid-column: auto;
-  }
-
-  .hero h1 {
-    font-size: 34px;
-  }
-
-  .hero-content {
-    padding: 0 20px;
-  }
-
-  .actions {
-    flex-direction: column;
-
-    max-width: 230px;
-
-    margin-left: auto;
-    margin-right: auto;
-      }
-}
-/* Ajuste de retratos verticales */
-.portfolio-card img.retrato-vertical {
-  object-fit: cover;
-  object-position: center center;
-}
-
-/* En celulares, mostrar un poco más de la fotografía */
-@media (max-width: 480px) {
-  .portfolio-card img.retrato-vertical {
-    object-fit: cover;
-    object-position: center center;
-    transform: scale(0.94);
-  }
-}
-/* =========================
-   GALERÍAS — DISEÑO
-========================= */
-
-.gallery-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.gallery-info h2 {
-  margin-bottom: 22px;
-}
-
-.gallery-info p:not(.eyebrow):not(.gallery-note) {
-  color: var(--muted);
-  max-width: 430px;
-  margin-bottom: 28px;
-}
-
-.gallery-note {
-  margin: 14px 0 0;
-  color: #777;
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-}
-
-/* Visual fotográfico */
-
-.gallery-visual {
-  width: 100%;
-  height: 100%;
-  min-height: 420px;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
-  position: relative;
-  overflow: hidden;
-
-  background:
-    radial-gradient(
-      circle at center,
-      #292a28 0%,
-      #151616 45%,
-      #090a0a 100%
-    );
-}
-
-.gallery-frame {
-  width: 210px;
-  height: 270px;
-
-  padding: 10px;
-
-  background: #d8d2c5;
-
-  box-shadow:
-    0 25px 60px rgba(0,0,0,.55);
-
-  transform: rotate(-4deg);
-
-  transition:
-    transform .5s var(--ease),
-    box-shadow .5s ease;
-}
-
-.gallery-frame-inner {
-  width: 100%;
-  height: 100%;
-
-  display: grid;
-  place-items: center;
-
-  border: 1px solid #777;
-
-  background:
-    linear-gradient(
-      145deg,
-      #343534,
-      #111212
-    );
-}
-
-.gallery-frame-inner span {
-  font-family: Georgia, serif;
-  font-size: 42px;
-  letter-spacing: -5px;
-  color: #d8d2c5;
-}
-
-.gallery-visual:hover .gallery-frame {
-  transform: rotate(0deg) scale(1.03);
-
-  box-shadow:
-    0 30px 70px rgba(0,0,0,.65);
-}
-
-.gallery-caption {
-  margin-top: 25px;
-
-  font-size: 8px;
-  letter-spacing: 3px;
-
-  color: #777;
-
-  text-transform: uppercase;
-}
-/* =========================
-   CONTACTO — DISEÑO
-========================= */
-
-.contact {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.contact-intro h2 {
-  margin-bottom: 24px;
-}
-
-.contact-intro > p:not(.eyebrow):not(.contact-location) {
-  max-width: 450px;
-  color: var(--muted);
-  line-height: 1.8;
-}
-
-.contact-location {
-  margin-top: 28px;
-  color: #888;
-  font-size: 12px;
-  letter-spacing: 1px;
-}
-
-.contact-content {
-  width: 100%;
-}
-
-.contact-links {
-  display: flex;
-  flex-direction: column;
-  border-top: 1px solid rgba(255,255,255,.12);
-}
-
-.contact-item {
-  position: relative;
-
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-template-rows: auto auto;
-
-  padding: 22px 4px;
-
-  border-bottom: 1px solid rgba(255,255,255,.12);
-
-  color: inherit;
-  text-decoration: none;
-
-  transition:
-    padding .3s ease,
-    border-color .3s ease;
-}
-
-.contact-item span {
-  font-family: "Playfair Display", serif;
-  font-size: 22px;
-}
-
-.contact-item small {
-  grid-column: 1;
-  margin-top: 5px;
-
-  color: var(--muted);
-  font-size: 11px;
-  letter-spacing: .5px;
-}
-
-.contact-item strong {
-  grid-column: 2;
-  grid-row: 1 / 3;
-
-  align-self: center;
-
-  font-size: 22px;
-  font-weight: 400;
-
-  transition: transform .3s ease;
-}
-
-.contact-item:hover {
-  padding-left: 12px;
-  border-color: rgba(255,255,255,.3);
-}
-
-.contact-item:hover strong {
-  transform: translateX(6px);
-}
-
-/* WhatsApp */
-
-.contact-item.whatsapp span {
-  color: #f1f1ed;
-}
-
-.contact-main-btn {
-  display: inline-flex;
-  margin-top: 32px;
-}
-
-/* =========================
-   CONTACTO — CELULAR
-========================= */
-
-@media (max-width: 850px) {
-
-  .contact {
-    grid-template-columns: 1fr;
     gap: 45px;
+
+    padding: 65px 5%;
   }
 
   .contact-intro h2 {
@@ -1175,7 +1121,207 @@ footer {
 
   .contact-main-btn {
     width: 100%;
+
     justify-content: center;
   }
 
+
+  /* FOOTER */
+
+  footer {
+    display: block;
+
+    line-height: 2;
+  }
+
+  footer span {
+    display: block;
+  }
+}
+
+
+/* =========================================================
+   CELULARES PEQUEÑOS
+========================================================= */
+
+@media (max-width: 480px) {
+
+  /* HEADER */
+
+  .site-header {
+    padding: 0 5%;
+  }
+
+
+  /* HERO */
+
+  .hero {
+    min-height: 650px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+
+    letter-spacing: 5px;
+  }
+
+  .hero-content {
+    padding: 0 20px;
+  }
+
+  .eyebrow {
+    letter-spacing: 3.5px;
+  }
+
+  .tagline {
+    font-size: 18px;
+  }
+
+
+  /* BOTONES */
+
+  .actions {
+    flex-direction: column;
+
+    width: 100%;
+    max-width: 230px;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .actions .btn {
+    width: 100%;
+  }
+
+
+  /* PORTFOLIO */
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+
+    grid-template-rows:
+      repeat(5, 220px);
+  }
+
+  .portfolio-card:nth-child(1),
+  .portfolio-card:nth-child(5) {
+    grid-column: auto;
+  }
+
+  .portfolio-card img.retrato-vertical {
+    object-fit: cover;
+
+    /*
+      Al reducir ligeramente la escala se evita
+      que el retrato quede demasiado cerrado.
+    */
+    transform: scale(.94);
+  }
+
+  .portfolio-card:hover img.retrato-vertical {
+    transform: scale(.98);
+  }
+
+
+  /* SERVICIOS */
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service,
+  .service:nth-child(3),
+  .service:nth-child(4) {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+
+    padding: 25px 0;
+  }
+
+  .service:last-child {
+    border-bottom: 0;
+  }
+
+
+  /* GALERÍAS */
+
+  .camera-art,
+  .gallery-visual {
+    min-height: 260px;
+  }
+
+  .gallery-frame {
+    width: 175px;
+    height: 225px;
+  }
+
+  .gallery-caption {
+    font-size: 7px;
+    letter-spacing: 2px;
+  }
+
+  .gallery-info {
+    padding: 50px 5%;
+  }
+
+  .gallery-info h2 {
+    font-size: 32px;
+  }
+
+
+  /* SOBRE MÍ */
+
+  .about-photo {
+    height: 330px;
+  }
+
+
+  /* CONTACTO */
+
+  .contact {
+    padding: 55px 5%;
+  }
+
+  .contact-item span {
+    font-size: 20px;
+  }
+
+  .contact-item small {
+    font-size: 10px;
+  }
+
+
+  /* FOOTER */
+
+  footer {
+    padding: 22px 5%;
+  }
+}
+
+
+/* =========================================================
+   PANTALLAS MUY PEQUEÑAS
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .hero h1 {
+    font-size: 29px;
+
+    letter-spacing: 3px;
+  }
+
+  .section h2,
+  .gallery-cta h2 {
+    font-size: 30px;
+  }
+
+  .gallery-info h2 {
+    font-size: 29px;
+  }
+
+  .about-photo {
+    height: 300px;
+  }
 }
