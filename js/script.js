@@ -221,3 +221,180 @@ closeButtons.forEach(button => {
   });
 
 });
+// ================================
+// VISOR DE FOTOS / LIGHTBOX
+// ================================
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightbox-image");
+const lightboxClose = document.getElementById("lightbox-close");
+const lightboxPrev = document.getElementById("lightbox-prev");
+const lightboxNext = document.getElementById("lightbox-next");
+
+let currentGalleryImages = [];
+let currentImageIndex = 0;
+
+
+// ================================
+// ABRIR FOTO
+// ================================
+
+document.querySelectorAll(".portfolio-gallery-grid img").forEach(image => {
+
+  image.addEventListener("click", () => {
+
+    const gallery = image.closest(".portfolio-gallery");
+
+    if (!gallery) return;
+
+    currentGalleryImages = Array.from(
+      gallery.querySelectorAll(".portfolio-gallery-grid img")
+    );
+
+    currentImageIndex =
+      currentGalleryImages.indexOf(image);
+
+    showLightboxImage();
+
+    lightbox.hidden = false;
+
+    document.body.style.overflow = "hidden";
+
+  });
+
+});
+
+
+// ================================
+// MOSTRAR FOTO
+// ================================
+
+function showLightboxImage() {
+
+  const image = currentGalleryImages[currentImageIndex];
+
+  if (!image) return;
+
+  lightboxImage.src = image.src;
+  lightboxImage.alt = image.alt;
+
+}
+
+
+// ================================
+// FOTO ANTERIOR
+// ================================
+
+function previousImage() {
+
+  if (!currentGalleryImages.length) return;
+
+  currentImageIndex--;
+
+  if (currentImageIndex < 0) {
+
+    currentImageIndex =
+      currentGalleryImages.length - 1;
+
+  }
+
+  showLightboxImage();
+
+}
+
+
+// ================================
+// FOTO SIGUIENTE
+// ================================
+
+function nextImage() {
+
+  if (!currentGalleryImages.length) return;
+
+  currentImageIndex++;
+
+  if (
+    currentImageIndex >=
+    currentGalleryImages.length
+  ) {
+
+    currentImageIndex = 0;
+
+  }
+
+  showLightboxImage();
+
+}
+
+
+// ================================
+// CERRAR
+// ================================
+
+function closeLightbox() {
+
+  lightbox.hidden = true;
+
+  document.body.style.overflow = "";
+
+}
+
+
+lightboxClose.addEventListener(
+  "click",
+  closeLightbox
+);
+
+lightboxPrev.addEventListener(
+  "click",
+  previousImage
+);
+
+lightboxNext.addEventListener(
+  "click",
+  nextImage
+);
+
+
+// ================================
+// CERRAR TOCANDO EL FONDO
+// ================================
+
+lightbox.addEventListener("click", event => {
+
+  if (event.target === lightbox) {
+
+    closeLightbox();
+
+  }
+
+});
+
+
+// ================================
+// TECLADO
+// ================================
+
+document.addEventListener("keydown", event => {
+
+  if (lightbox.hidden) return;
+
+  if (event.key === "Escape") {
+
+    closeLightbox();
+
+  }
+
+  if (event.key === "ArrowLeft") {
+
+    previousImage();
+
+  }
+
+  if (event.key === "ArrowRight") {
+
+    nextImage();
+
+  }
+
+});
