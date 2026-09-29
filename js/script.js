@@ -1,4 +1,3 @@
-```javascript
 // ================================
 // MENÚ MOBILE
 // ================================
@@ -117,37 +116,56 @@ if (footerYear) {
   );
 
 }
-```
+
+
 // ================================
 // GALERÍAS DEL PORTFOLIO
 // ================================
 
-const portfolioCards = document.querySelectorAll(".portfolio-card[data-gallery]");
-const portfolioGalleries = document.querySelectorAll(".portfolio-gallery");
+const portfolioCards = document.querySelectorAll(
+  ".portfolio-card[data-gallery]"
+);
+
+const portfolioGalleries = document.querySelectorAll(
+  ".portfolio-gallery"
+);
+
 
 portfolioCards.forEach(card => {
 
-  const openGallery = () => {
+  card.addEventListener("click", () => {
 
-    const galleryName = card.dataset.gallery;
-    const gallery = document.getElementById(`gallery-${galleryName}`);
+    const galleryName = card.getAttribute("data-gallery");
 
-    if (!gallery) return;
+    const gallery = document.getElementById(
+      "gallery-" + galleryName
+    );
 
-    // Cerrar cualquier otra galería
+    if (!gallery) {
+      console.log("No se encontró la galería:", galleryName);
+      return;
+    }
+
+
+    // Cerrar todas las galerías
+
     portfolioGalleries.forEach(item => {
+
       item.hidden = true;
       item.classList.remove("gallery-active");
+
     });
 
-    // Abrir la seleccionada
+
+    // Abrir la galería seleccionada
+
     gallery.hidden = false;
 
-    requestAnimationFrame(() => {
-      gallery.classList.add("gallery-active");
-    });
+    gallery.classList.add("gallery-active");
 
-    // Llevar al usuario hasta la galería
+
+    // Desplazarse hasta la galería
+
     setTimeout(() => {
 
       gallery.scrollIntoView({
@@ -157,20 +175,18 @@ portfolioCards.forEach(card => {
 
     }, 50);
 
-  };
+  });
 
 
-  card.addEventListener("click", openGallery);
+  // Abrir también con teclado
 
-
-  // También permite abrir con Enter o espacio
   card.addEventListener("keydown", event => {
 
     if (event.key === "Enter" || event.key === " ") {
 
       event.preventDefault();
 
-      openGallery();
+      card.click();
 
     }
 
@@ -183,21 +199,24 @@ portfolioCards.forEach(card => {
 // CERRAR GALERÍAS
 // ================================
 
-document.querySelectorAll(".gallery-close").forEach(button => {
+const closeButtons = document.querySelectorAll(
+  ".gallery-close"
+);
+
+
+closeButtons.forEach(button => {
 
   button.addEventListener("click", () => {
 
-    const gallery = button.closest(".portfolio-gallery");
+    const gallery = button.closest(
+      ".portfolio-gallery"
+    );
 
     if (!gallery) return;
 
     gallery.classList.remove("gallery-active");
 
-    setTimeout(() => {
-
-      gallery.hidden = true;
-
-    }, 250);
+    gallery.hidden = true;
 
   });
 
