@@ -1504,3 +1504,14 @@ footer {
   }
 
 }
+/* FOTO DE FONDO DEL HERO */
+.hero::before {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,.72),
+      rgba(0,0,0,.25),
+      rgba(0,0,0,.65)
+    ),
+    url("../img/6 DE JULIO_57.webp") center 35% / cover no-repeat;
+}
